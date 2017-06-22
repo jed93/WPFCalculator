@@ -1,0 +1,82 @@
+﻿<Window x:Class="WPFCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCalculator"
+        mc:Ignorable="d"
+        Title="WPF Calculator" MinHeight="340" MinWidth="535" Height="340" Width="535">
+    <Border Background="PowderBlue">
+        <Grid Margin="4,-7,8,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.Effect>
+                <DropShadowEffect/>
+            </Grid.Effect>
+            <TextBox x:Name="inputTextBox" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="41" Margin="0,22,0,0" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" FontSize="24" TextDecorations="{x:Null}" Grid.Column="1" TextAlignment="Right" IsEnabled="False">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-0.093"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-0.522"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,70,0,8">
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                    <Button x:Name="Clean" Content="C" HorizontalAlignment="Stretch" Margin="10,10,10,0" VerticalAlignment="Stretch" MinWidth="48" RenderTransformOrigin="1.657,0.461" FontSize="18" BorderBrush="#FF666666" Click="Clean_OnClick"/>
+                    <Button x:Name="ClearEntry" Content="CE" HorizontalAlignment="Stretch" Margin="0,10,0,0" VerticalAlignment="Stretch" MinWidth="48" RenderTransformOrigin="1.657,0.461" FontSize="18" BorderBrush="#FF666666" Click="ClearEntry_OnClick"/>
+                </StackPanel>
+                <Grid DockPanel.Dock="Bottom" HorizontalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="0.16*" />
+                    </Grid.RowDefinitions>
+                    <UniformGrid Grid.Row="0" Rows="4" Columns="6">
+                        <Button x:Name="Sign" Content="±" HorizontalAlignment="Stretch" Margin="0,10,20,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Sign_OnClick"/>
+                        <Button x:Name="Factorial" Content="n!" HorizontalAlignment="Stretch" Margin="0,10,20,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Factorial_OnClick"/>
+                        <Button x:Name="Pi" Content="π" HorizontalAlignment="Stretch" Margin="0,10,20,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Pi_OnClick"/>
+                        <Button x:Name="Divide" Content="/" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Divide_OnClick"/>
+                        <Button x:Name="Squared" Content="x^2" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Squared_OnClick"/>
+                        <Button x:Name="ToPowerOf" Content="x^y" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="ToPowerOf_OnClick"/>
+
+                        <Button x:Name="One" Content="1" HorizontalAlignment="Stretch" Margin="0,10,20,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="One_OnClick"/>
+                        <Button x:Name="Two" Content="2" HorizontalAlignment="Stretch" Margin="0,10,20,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Two_OnClick"/>
+                        <Button x:Name="Three" Content="3" HorizontalAlignment="Stretch" Margin="0,10,20,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Three_OnClick"/>
+                        <Button x:Name="Multiple" Content="*" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Multiple_OnClick"/>
+                        <Button x:Name="SquareRoot" Content="√" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="SquareRoot_OnClick"/>
+                        <Button x:Name="TenToPowerOf" Content="10^x" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="TenToPowerOf_OnClick"/>
+
+                        <Button x:Name="Four" Content="4" HorizontalAlignment="Stretch" Margin="0,10,20,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Four_OnClick"/>
+                        <Button x:Name="Five" Content="5" HorizontalAlignment="Stretch" Margin="0,10,20,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Five_OnClick"/>
+                        <Button x:Name="Six" Content="6" HorizontalAlignment="Stretch" Margin="0,10,20,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Six_OnClick"/>
+                        <Button x:Name="Minus" Content="-" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Minus_OnClick"/>
+                        <Button x:Name="Sine" Content="Sin" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Sine_OnClick"/>
+                        <Button x:Name="Cosine" Content="Cos" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Cosine_OnClick"/>
+
+                        <Button x:Name="Seven" Content="7" HorizontalAlignment="Stretch" Margin="0,10,20,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Seven_OnClick"/>
+                        <Button x:Name="Eight" Content="8" HorizontalAlignment="Stretch" Margin="0,10,20,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Eight_OnClick"/>
+                        <Button x:Name="Nine" Content="9" HorizontalAlignment="Stretch" Margin="0,10,20,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Nine_OnClick"/>
+                        <Button x:Name="Add" Content="+" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Add_OnClick"/>
+                        <Button x:Name="Tangent" Content="Tan" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Tangent_OnClick"/>
+                        <Button x:Name="Logarithm" Content="Log" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Click="Logarithm_OnClick"/>
+                    </UniformGrid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.84*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="0.17*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="Zero" Content="0" HorizontalAlignment="Stretch" Margin="0,0,10,0" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Grid.Column="0" Click="Zero_OnClick"/>
+                        <Button x:Name="Decipoint" Content="," HorizontalAlignment="Stretch" Margin="10,0,10,0" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Grid.Column="1" Click="Decipoint_OnClick"/>
+                        <Button x:Name="Enter" Content="=" HorizontalAlignment="Stretch" Margin="10,0,10,0" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Grid.Column="3" Click="Enter_OnClick"/>
+                        <Button x:Name="Exponential" Content="Exp" HorizontalAlignment="Stretch" Margin="10,0,10,0" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Grid.Column="4" Click="Exponential_OnClick"/>
+                        <Button x:Name="Modulo" Content="Mod" HorizontalAlignment="Stretch" Margin="10,0,10,0" VerticalAlignment="Stretch" FontSize="18" BorderBrush="#FF666666" Grid.Column="5" Click="Modulo_OnClick"/>
+                    </Grid>
+                </Grid>
+            </DockPanel>
+        </Grid>
+    </Border>
+</Window>
